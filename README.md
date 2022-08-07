@@ -2,7 +2,7 @@
   <a href="" rel="noopener">
  <img src="https://i.imgur.com/WYFBtXt.png" alt="Project logo"></a>
 </p>
-<h3 align="center">Leaf</h3>
+<h3 align="center">Green</h3>
 <h4 align="center">RDVHacks 2022</h4>
 <a href="https://www.figma.com/proto/zoH1DUirFBt1Bo9tfR3FMI/RDV-Hacks?node-id=7%3A349&scaling=scale-down&page-id=7%3A348&starting-point-node-id=7%3A363"><p align="center">Figma Proto</p></a>
 <a href="https://docs.google.com/presentation/d/1UV758y6f7dKwgob_nGMAAjQ7DvuUSKl_biPgebw42co/edit?usp=sharing"><p align="center">Slide Deck</p></a>
