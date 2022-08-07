@@ -46,7 +46,5 @@ As a smaller team, there was definitely a lot of pressure to get started buildin
 ## Accomplishments that we're proud of
 With a small dev team, converting the Figma prototypes into code was challenging at times, but we ended up with a user experience that we’re really proud of. In addition, we love that Green is for everyone, no matter what knowledge level or age, and can only do more good as more people join!
 
-## What we learned
-
 ## What's next for Green
 We believe Green can grow in all three branches of the product. There is room to expand into multiple types of content outside of tasks, and we have some ideas on other ways to incentivize action with things like points and rankings. On top of that, we'd love to introduce a social element to the platform, where people compare and share results with others!
