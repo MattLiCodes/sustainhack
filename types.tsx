@@ -23,6 +23,10 @@ export type RootStackParamList = {
   Onboarding: undefined;
   Selection: undefined;
   NotFound: undefined;
+  Main: undefined;
+  Choose: undefined;
+  Popup: undefined;
+  Tasks: undefined;
 };
 
 export type RootStackScreenProps<

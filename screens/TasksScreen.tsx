@@ -13,11 +13,6 @@ export default function TasksScreen({
   const dispatch = useDispatch();
   const tasks = useSelector((state: any) => state.tasks);
 
-  const onClick = (id: number) => {
-    dispatch(addTaskCount(id, 1));
-    dispatch(getImpact());
-  };
-
   const progressStyle = (taskId: number) => {
     const progress = (tasks[taskId].currCount / tasks[taskId].totalCount) * 100;
     return {
@@ -73,7 +68,7 @@ export default function TasksScreen({
                           : `Completed`}
                       </Text>
                       <Text style={styles.carbonText}>
-                        {task.currImpact} lb carbon diverted
+                        {task.currImpact.toFixed(1)} lb carbon diverted
                       </Text>
                     </View>
                   )}

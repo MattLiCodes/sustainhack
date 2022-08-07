@@ -7,12 +7,19 @@ import {
   ImageBackground,
 } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 import { startTask, deselectTask } from "./../redux/actions";
 
 export default function SelectionScreen({ navigation }: any) {
   const dispatch = useDispatch();
   const lastWeek = useSelector((state: any) => state.lastWeek);
   const tasks = useSelector((state: any) => state.tasks);
+  const newUser = useSelector((state: any) => state.newUser);
+  useEffect(() => {
+    if (!newUser) {
+      navigation.navigate("Tasks");
+    }
+  }, []);
   return (
     <ImageBackground
       source={require("./../assets/images/bg.png")}

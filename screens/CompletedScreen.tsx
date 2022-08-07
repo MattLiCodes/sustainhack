@@ -13,6 +13,8 @@ export default function CompletedScreen({
   const dispatch = useDispatch();
   const tasks = useSelector((state: any) => state.tasks);
   const currImpact = useSelector((state: any) => state.currImpact);
+  const lastWeek = useSelector((state: any) => state.lastWeek);
+  const newUser = useSelector((state: any) => state.newUser);
 
   const onClick = (id: number) => {
     dispatch(addTaskCount(id, 1));
@@ -172,7 +174,7 @@ export default function CompletedScreen({
               color: "#2C524B",
             }}
           >
-            9,753
+            {currImpact + (newUser ? 0 : lastWeek)}
           </Text>
           <Text
             style={{

@@ -20,9 +20,12 @@ import useColorScheme from "../hooks/useColorScheme";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import TasksScreen from "../screens/TasksScreen";
 import CompletedScreen from "../screens/CompletedScreen";
+import ChooseScreen from "../screens/ChooseScreen";
 import SpotlightScreen from "../screens/SpotlightScreen";
 import OnboardingScreen from "../screens/OnboardingScreen";
 import SelectionScreen from "../screens/SelectionScreen";
+import LandingScreen from "../screens/LandingScreen";
+import PopupScreen from "../screens/PopupScreen";
 
 import {
   RootStackParamList,
@@ -45,8 +48,33 @@ function RootNavigator() {
   return (
     <Stack.Navigator>
       <Stack.Screen
+        name="Choose"
+        component={ChooseScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Popup"
+        component={PopupScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Main"
+        component={LandingScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
         name="Root"
         component={BottomTabNavigator}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Onboarding"
+        component={OnboardingScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Spotlight"
+        component={SpotlightScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen
@@ -67,7 +95,6 @@ function BottomTabNavigator() {
     <BottomTab.Navigator
       initialRouteName="Tasks"
       screenOptions={{
-        tabBarSize: 10,
         tabBarActiveBackgroundColor: "#F9FFEF",
         tabBarInactiveBackgroundColor: "#F9FFEF",
         tabBarActiveTintColor: "#2C524B",
@@ -103,16 +130,6 @@ const TasksScreenNav = createNativeStackNavigator<RootStackParamList>();
 function TaskScreenNavigator() {
   return (
     <TasksScreenNav.Navigator>
-      <TasksScreenNav.Screen
-        name="Onboarding"
-        component={OnboardingScreen}
-        options={{ headerShown: false }}
-      />
-      <TasksScreenNav.Screen
-        name="Spotlight"
-        component={SpotlightScreen}
-        options={{ headerShown: false }}
-      />
       <TasksScreenNav.Screen
         name="Selection"
         component={SelectionScreen}

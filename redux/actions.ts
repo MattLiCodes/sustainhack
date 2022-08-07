@@ -33,3 +33,12 @@ export function getImpact() {
     type: "GET_IMPACT",
   };
 }
+
+export function setUser(val: boolean) {
+  return {
+    type: "SET_USER",
+    payload: {
+      value: val,
+    },
+  };
+}

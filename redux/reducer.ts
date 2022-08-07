@@ -3,7 +3,9 @@ import sampleTasks from "../sampleTasks";
 const initialState = {
   username: "User Name",
   lastWeek: [3],
+  lastWeekImpact: 200,
   currImpact: 0,
+  newUser: true,
   tasks: sampleTasks,
 };
 
@@ -43,6 +45,8 @@ export default function appReducer(state = initialState, action: any) {
         count += task.currImpact;
       }
       return { ...state, currImpact: count };
+    case "SET_USER":
+      return { ...state, newUser: action.payload.value };
     default:
       return state;
   }

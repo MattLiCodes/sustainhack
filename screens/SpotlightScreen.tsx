@@ -60,7 +60,7 @@ export default function SpotlightScreen({ navigation }: any) {
       <TouchableOpacity style={styles.button}>
         <Text
           style={{ color: "#FFFFFF" }}
-          onPress={() => navigation.navigate("Selection")}
+          onPress={() => navigation.navigate("Root")}
         >
           Next
         </Text>
