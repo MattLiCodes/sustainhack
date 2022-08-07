@@ -19,6 +19,15 @@ export default function TasksScreen({
   };
 
   return (
+    <View>
+    <View style={styles.header}><Text style={{
+      "fontFamily": "Days One",
+      "fontStyle": "normal",
+      "fontWeight": "400",
+      "fontSize": 22,
+      "lineHeight": 28,
+      "color": "#2F2F2F"
+    }}>This Week</Text></View>
     <View style={styles.container}>
       <Text style={styles.title}>Tasks</Text>
       <View
@@ -33,6 +42,7 @@ export default function TasksScreen({
           </View>
         ))}
       </View>
+    </View>
     </View>
   );
 }
@@ -52,4 +62,11 @@ const styles = StyleSheet.create({
     height: 1,
     width: "80%",
   },
+  header: {
+    position: "absolute",
+    width: 224,
+    height: 17,
+    left: 22,
+    top: 10,
+  }
 });
