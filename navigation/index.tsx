@@ -16,10 +16,13 @@ import { ColorSchemeName, Pressable } from "react-native";
 
 import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
-import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import TasksScreen from "../screens/TasksScreen";
 import CompletedScreen from "../screens/CompletedScreen";
+import SpotlightScreen from "../screens/SpotlightScreen";
+import OnboardingScreen from "../screens/OnboardingScreen";
+import SelectionScreen from "../screens/SelectionScreen";
+
 import {
   RootStackParamList,
   RootTabParamList,
@@ -75,8 +78,9 @@ function BottomTabNavigator() {
     >
       <BottomTab.Screen
         name="Tasks"
-        component={TasksScreen}
+        component={TaskScreenNavigator}
         options={({ navigation }: RootTabScreenProps<"Tasks">) => ({
+          headerShown: false,
           title: "Tasks",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         })}
@@ -85,11 +89,41 @@ function BottomTabNavigator() {
         name="Completed"
         component={CompletedScreen}
         options={{
+          headerShown: false,
           title: "Completed",
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
     </BottomTab.Navigator>
+  );
+}
+
+const TasksScreenNav = createNativeStackNavigator<RootStackParamList>();
+
+function TaskScreenNavigator() {
+  return (
+    <TasksScreenNav.Navigator>
+      <TasksScreenNav.Screen
+        name="Onboarding"
+        component={OnboardingScreen}
+        options={{ headerShown: false }}
+      />
+      <TasksScreenNav.Screen
+        name="Spotlight"
+        component={SpotlightScreen}
+        options={{ headerShown: false }}
+      />
+      <TasksScreenNav.Screen
+        name="Selection"
+        component={SelectionScreen}
+        options={{ headerShown: false }}
+      />
+      <TasksScreenNav.Screen
+        name="TasksScreen"
+        component={TasksScreen}
+        options={{ headerShown: false }}
+      />
+    </TasksScreenNav.Navigator>
   );
 }
 

@@ -16,21 +16,23 @@ export default function appReducer(state = initialState, action: any) {
         ...state,
         tasks: taskArray,
       };
+    case "DESELECT_TASK":
+      const copyOfTaskArray = [...state.tasks];
+      copyOfTaskArray[action.payload.taskId].selected = false;
+
+      return {
+        ...state,
+        tasks: copyOfTaskArray,
+      };
     case "ITERATE_TASK":
       const newTaskArray = [...state.tasks];
       const task = newTaskArray[action.payload.taskId];
-      const taskCount = task.currCount;
-      if (taskCount.length > 1) {
-        taskCount[action.payload.day] = 1;
-      } else {
-        taskCount[0] = 1;
-      }
-
-      task.currImpact =
-        task.impact * (task.currCount.reduce(add, 0) / task.totalCount);
-
-      if (task.totalCount == task.currCount.reduce(add, 0)) {
-        task.completed = true;
+      if (task.completed == false) {
+        task.currCount += 1;
+        task.currImpact = task.impact * (task.currCount / task.totalCount);
+        if (task.totalCount == task.currCount) {
+          task.completed = true;
+        }
       }
       return { ...state, tasks: newTaskArray };
     case "GET_IMPACT":

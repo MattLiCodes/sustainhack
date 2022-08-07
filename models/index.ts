@@ -5,7 +5,7 @@ export type TaskItem = {
   duration: string;
   impact: number;
   why: string;
-  currCount: number[];
+  currCount: number;
   currImpact: number;
   totalCount: number;
   selected: boolean;
