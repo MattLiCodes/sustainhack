@@ -4,6 +4,7 @@
  *
  */
 import { FontAwesome } from "@expo/vector-icons";
+import { UnorderedListOutlined } from "@ant-design/icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import {
   NavigationContainer,
@@ -30,16 +31,9 @@ import {
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 
-export default function Navigation({
-  colorScheme,
-}: {
-  colorScheme: ColorSchemeName;
-}) {
+export default function Navigation() {
   return (
-    <NavigationContainer
-      linking={LinkingConfiguration}
-      theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
-    >
+    <NavigationContainer linking={LinkingConfiguration}>
       <RootNavigator />
     </NavigationContainer>
   );
@@ -73,7 +67,10 @@ function BottomTabNavigator() {
     <BottomTab.Navigator
       initialRouteName="Tasks"
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
+        tabBarSize: 10,
+        tabBarActiveBackgroundColor: "#F9FFEF",
+        tabBarInactiveBackgroundColor: "#F9FFEF",
+        tabBarActiveTintColor: "#2C524B",
       }}
     >
       <BottomTab.Screen
@@ -82,7 +79,8 @@ function BottomTabNavigator() {
         options={({ navigation }: RootTabScreenProps<"Tasks">) => ({
           headerShown: false,
           title: "Tasks",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          showLabel: false,
+          tabBarIcon: ({ color }) => <TabBarIcon name="bars" color={color} />,
         })}
       />
       <BottomTab.Screen
@@ -91,7 +89,9 @@ function BottomTabNavigator() {
         options={{
           headerShown: false,
           title: "Completed",
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          tabBarIcon: ({ color }) => (
+            <TabBarIcon name="history" color={color} />
+          ),
         }}
       />
     </BottomTab.Navigator>

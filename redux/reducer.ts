@@ -2,6 +2,7 @@ import sampleTasks from "../sampleTasks";
 
 const initialState = {
   username: "User Name",
+  lastWeek: [3],
   currImpact: 0,
   tasks: sampleTasks,
 };

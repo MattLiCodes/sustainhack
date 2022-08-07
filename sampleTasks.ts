@@ -2,6 +2,7 @@ const sampleTasks = [
   {
     id: 0,
     title: "Eat Vegan For A Week",
+    icon: "🥬",
     type: "Energy, Environment",
     duration: "1 Week",
     impact: 196,
@@ -15,7 +16,8 @@ const sampleTasks = [
   },
   {
     id: 1,
-    title: "Take Public Transport Instead of Driving",
+    title: "Take Public Transport",
+    icon: "🚎",
     type: "Energy",
     duration: "7",
     impact: 95,
@@ -30,6 +32,7 @@ const sampleTasks = [
   {
     id: 2,
     title: "Bike Instead of Driving",
+    icon: "🚴‍♂️",
     type: "Environment",
     duration: "7",
     impact: 196,
@@ -43,6 +46,7 @@ const sampleTasks = [
   {
     id: 3,
     title: "Air Dry Your Clothes",
+    icon: "💨",
     type: "Energy",
     duration: "7",
     impact: 46,
@@ -56,6 +60,7 @@ const sampleTasks = [
   {
     id: 4,
     title: "Carry A Reusable Water Bottle",
+    icon: "💧",
     type: "Environment",
     duration: "7",
     impact: 1,
@@ -69,6 +74,7 @@ const sampleTasks = [
   {
     id: 5,
     title: "Use Reusable Shopping Bags",
+    icon: "🛍",
     type: "Environment",
     duration: "7",
     impact: 1,
@@ -81,7 +87,8 @@ const sampleTasks = [
   },
   {
     id: 6,
-    title: "Set Your Thermostat Above 72 Degrees",
+    title: "Adjust Your Thermostat",
+    icon: "🌡️",
     type: "Energy",
     duration: "7",
     impact: 2.3,
@@ -94,12 +101,13 @@ const sampleTasks = [
   },
   {
     id: 7,
-    title: "Turn Off The Lights When Leaving Home",
+    title: "Turn Off The Lights",
+    icon: "💡",
     type: "Energy",
     duration: "7",
     impact: 1.5,
     why: "",
-    currCount: 0,
+    currCount: 5,
     currImpact: 0,
     totalCount: 7,
     selected: false,
@@ -108,6 +116,7 @@ const sampleTasks = [
   {
     id: 8,
     title: "Unplug Your Electronics",
+    icon: "🔌",
     type: "Energy",
     duration: "7",
     impact: 39,
@@ -121,6 +130,7 @@ const sampleTasks = [
   {
     id: 9,
     title: "Wash Clothes On Cold",
+    icon: "🧺",
     type: "Energy",
     duration: "7",
     impact: 7,

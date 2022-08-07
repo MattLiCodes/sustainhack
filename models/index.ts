@@ -1,6 +1,7 @@
 export type TaskItem = {
   id: number;
   title: string;
+  icon: string;
   type: string;
   duration: string;
   impact: number;
