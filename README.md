@@ -23,6 +23,7 @@ to install, then
 ```
 npm start
 ```
+After that, use the Expo CLI instructions to deploy to either web, iOS Emulator, or Android Emulator.
 
 ## 📝 Project Details <a name = "idea"></a>
 
